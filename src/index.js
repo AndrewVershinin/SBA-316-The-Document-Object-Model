@@ -18,7 +18,13 @@ const userInput = document.getElementById('user-input');
 const submitBtn = document.getElementById('submit-btn');
 const feedback = document.getElementById('feedback');
 
+// elements for the coin toss game
+const coinTossGame = document.getElementById('toss-coin');
+const coinInput = document.getElementById('coin-input');
+const coinTossBtn = document.getElementById('toss-coin-btn');
+const coinFeedback = document.getElementById('coin-feedback');
 
+// EventListener for the planet game
 submitBtn.addEventListener('click', () => {
     // get the user's answer
     const userAnswer = userInput.value.trim();
@@ -41,13 +47,17 @@ submitBtn.addEventListener('click', () => {
 });
 
 
-// add click to each square
+// add click to each square for the square game
 squares.forEach((square, index) => {
     square.addEventListener('click', () => {
         // if user guessed correctly
         if (index === correctSquare) {
             square.classList.add('correct');
             result.textContent = "Correct! You gueesed the right square!";
+            
+            // hide the square game and show the coin toss game
+            squareGame.style.display = 'none';
+            coinTossGame.style.display = 'block';
         // if user guessed incorrectly
         } else {
             square.classList.add('incorrect');
@@ -61,6 +71,8 @@ squares.forEach((square, index) => {
         );
     });
 });
+
+// eventListener for the coin toss game 
 
 
 

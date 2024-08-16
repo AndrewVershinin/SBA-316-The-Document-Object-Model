@@ -10,6 +10,11 @@
 body {
     text-align: center;
     margin-top: 50px;
+    background-image: url(Space-Background-Images.jpg);
+}
+
+h1 {
+    color: white;
 }
 
 input {
@@ -23,7 +28,7 @@ button {
     margin-left: 10px;
 }
 
-#feedback {
+#feedback #result #coin-feedback {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
@@ -50,10 +55,42 @@ button {
 .square.incorrect {
     background-color: red;
 }
+
+#square-game {
+    background-color: aliceblue;
+    margin: 0px 150px;
+    padding: 50px;
+    border-radius: 6%;
+    opacity: 0.8;
+}
+
+#planet-game {
+    background-color: aliceblue;
+    margin: 0px 150px;
+    padding: 50px;
+    border-radius: 6%;
+    opacity: 0.8;
+
+}
+
+#planet-game p {
+    font-size: 20px;
+}
+
+#toss-coin {
+    background-color: aliceblue;
+    margin: 0px 150px;
+    padding: 50px;
+    border-radius: 6%;
+    opacity: 0.8;
+}
+
+
     </style>
 </head>
 <body>
     <h1>Amazing 3 steps game</h1>
+
     <!-- planet guessing game -->
      <div id="planet-game">
         <p id="question">The first planet of our solar system is?</p>
@@ -61,7 +98,6 @@ button {
         <button id="submit-btn">Submit</button>
         <p id="feedback"></p>
      </div>
-
 
     <!-- Square game -->
      <div style="display: none;" id="square-game">
@@ -73,6 +109,16 @@ button {
         </div>
         <p id="result"></p>
     </div>
+
+    <!-- toss a coin game -->
+     <div id="toss-coin" style="display: none;" >
+        <h2>Toss a coin!</h2>
+        <p>Try your luck in the last game!</p>
+        <input type="text" id="coin-input" placeholder="Heads or Tails">
+        <button id="toss-coin-btn">Toss</button>
+        <p id="coin-feedback"></p>
+     </div>
+
     <script src="src/index.js"></script>
 </body>
 </html>
