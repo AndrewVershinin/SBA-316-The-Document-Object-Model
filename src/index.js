@@ -10,6 +10,7 @@ const squares = document.querySelectorAll('.square');
 const result = document.getElementById('result');
 // random for correct choose
 const correctSquare = Math.floor(Math.random() * squares.length);
+const squareGame = document.getElementById('square-game');
 
 // elements for the planet guessing game
 const correctAnswer = "Mercury";
@@ -26,6 +27,9 @@ submitBtn.addEventListener('click', () => {
     if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
         feedback.textContent = `Correct! The first planet is ${correctAnswer}.`;
         feedback.style.color = "green";
+        // hide the planet guessing game after correct answer and show square game
+        document.getElementById('planet-game').style.display = 'none';
+        squareGame.style.display = 'block';
     } else {
         feedback.textContent = "Incorrect! Never give up!";
         feedback.style.color = "red";
