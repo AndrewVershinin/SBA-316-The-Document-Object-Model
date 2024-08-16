@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+#guessing-square {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.square.correct {
+    background-color: green;
+}
+
+.square.incorrect {
+    background-color: red;
+}
