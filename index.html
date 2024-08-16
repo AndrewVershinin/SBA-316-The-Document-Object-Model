@@ -3,12 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles.css">
+    <!-- <link rel="stylesheet" href="/src/styles.css" type="text/css"> -->
     <title>3 steps game</title>
+    <style>
+
+body {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#guessing-square {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.square.correct {
+    background-color: green;
+}
+
+.square.incorrect {
+    background-color: red;
+}
+    </style>
 </head>
 <body>
-    <h1>Guess the Correct Square!</h1>
-    <div id="guessing-square">
+    <h1>Amazing 3 steps game</h1>
+    <!-- planet guessing game -->
+     <div id="planet-game">
+        <p id="question">The first planet of our solar system is?</p>
+        <input type="text" id="user-input" placeholder="Enter your answer">
+        <button id="submit-btn">Submit</button>
+        <p id="feedback"></p>
+     </div>
+
+
+    <!-- Square game -->
+    <div id="guessing-square" style="display: none;">
+        <h2>Guess the Correct Square!</h2>
         <div class="square" id="square1"></div>
         <div class="square" id="square2"></div>
         <div class="square" id="square3"></div>
