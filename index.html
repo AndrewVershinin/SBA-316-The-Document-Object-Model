@@ -40,12 +40,29 @@ button {
     margin-top: 20px;
 }
 
+#result {
+    margin-top: 15px;
+}
+
 .square {
     width: 100px;
     height: 100px;
-    margin: 10px;
-    background-color: #ddd;
-    cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0px 5px;
+}
+
+.square img {
+    display: none;
+    width: 80px;
+    height: 80px;
+}
+
+.correct img {
+    display: block;
 }
 
 .square.correct {
@@ -89,7 +106,7 @@ button {
     </style>
 </head>
 <body>
-    <h1>Amazing 3 steps game</h1>
+    <h1>Сomplete three games and get a super prize</h1>
 
     <!-- planet guessing game -->
      <div id="planet-game">
@@ -101,13 +118,13 @@ button {
 
     <!-- Square game -->
      <div style="display: none;" id="square-game">
-        <h2>Guess the Correct Square!</h2>
+        <h2>Save the hamster!</h2>
         <div id="guessing-square" >
             <div class="square" id="square1"></div>
             <div class="square" id="square2"></div>
             <div class="square" id="square3"></div>
         </div>
-        <p id="result"></p>
+        <div id="result"></div>
     </div>
 
     <!-- toss a coin game -->

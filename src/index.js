@@ -63,7 +63,7 @@ squares.forEach((square, index) => {
         if (index === correctSquare) {
             square.classList.add('correct');
             result.textContent = "Correct! You gueesed the right square!";
-            
+            square.innerHTML = `<img src="./humster.png" alt="correct!">`;
             // hide the square game and show the coin toss game
             // squareGame.style.display = 'none';
             coinTossGame.style.display = 'block';
