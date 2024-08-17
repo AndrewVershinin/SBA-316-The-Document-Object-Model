@@ -24,6 +24,11 @@ const coinInput = document.getElementById('coin-input');
 const coinTossBtn = document.getElementById('toss-coin-btn');
 const coinFeedback = document.getElementById('coin-feedback');
 
+// elements for registration
+const registration = document.getElementById('registration');
+const fullName = document.getElementById('fullname');
+const email = document.getElementById('email');
+
 // EventListener for the planet game
 submitBtn.addEventListener('click', () => {
     // get the user's answer
@@ -96,18 +101,45 @@ coinTossBtn.addEventListener('click', () => {
     // generate a random result (heads or tails)
     const coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
 
+    
+    const oldH1 = document.querySelector('h1');
+    const newH1 = document.createElement('h1');
+
+    // create the share with your friend button
+    const shareButton = document.createElement('button');
+    shareButton.textContent = 'Share the game with your friend';
+    shareButton.className = 'share-button';
+  
+
+
+
     // check if the user's guess is correct
     if (userGuess === coinResult) {
         coinFeedback.textContent = `Correct! It was ${coinResult}`;
         coinFeedback.style.color = 'green';
         coinTossBtn.remove();
+        setTimeout( () => {
+            document.getElementById('planet-game').style.display = 'none';
+            squareGame.style.display = 'none';
+            coinTossGame.style.display = 'none';
+            oldH1.remove();
+            newH1.textContent = 'Please provide your information below to get a super price';
+            document.body.appendChild(newH1);
+            document.body.insertBefore(newH1, document.body.firstChild);
+            document.body.appendChild(shareButton);
+            registration.style.display = 'block';
+        }, 2000);
     } else {
         coinFeedback.textContent = `Incorrect! It was ${coinResult}. Never give up! Try again!`
         coinFeedback.style.color = 'red';
         // clear the input field
         resetCoinTossGame()
     }
-})
+});
+
+// function playerNameValidation (playerName) {
+//     if (playerName)
+// }
 
 
 
