@@ -137,9 +137,61 @@ coinTossBtn.addEventListener('click', () => {
     }
 });
 
-// function playerNameValidation (playerName) {
-//     if (playerName)
-// }
+registration.addEventListener("submit", validateRegistration);
 
+function validateRegistration(event) {
+    event.preventDefault();
+
+    if (!playerNameValidation(fullName)) {
+        return false;
+    }
+    if (!emailValidation(email)) {
+        return false;
+    }
+
+    alert("Form submitted successfully!")
+};
+
+function playerNameValidation (playerName) {
+
+    const nameParts = playerName.value.trim().split(" ");
+
+    if (playerName.value === "") {
+        displayError("Please enter your full name");
+        return false;
+    }
+
+    if (nameParts.length < 2) {
+        displayError("Please enter both your first name and last name");
+        return false;
+    }
+
+    if (!playerName.value.match(/^[A-Za-z\s]+$/)) {
+        displayError("The full name can only contain letters and spaces");
+        return false;
+    }
+
+    return true;
+};
+
+function emailValidation(email) {
+    if (!email.value.match(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/)) {
+        displayError("Please enter a valid email.");
+        return false;
+    }
+    if (email.value.match("example\.com$")) {
+        displayError("The email must not be from the domain 'example.com.'")
+        return false;
+    }
+    return true;
+};
+
+function displayError(error) {
+    errorDisplay.textContent = error;
+    errorDisplay.style.display = "block";
+    setTimeout(() => {
+      errorDisplay.style.display = "none";
+    }, 2000);
+  }
 
 
