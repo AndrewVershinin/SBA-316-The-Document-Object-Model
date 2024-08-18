@@ -4,7 +4,7 @@
 // The third stage is to flip a coin.
 
 
-// elements for the square guessing game
+// elements for the save hamster game
 // select all squares
 const squares = document.querySelectorAll('.square');
 const result = document.getElementById('result');
@@ -39,8 +39,6 @@ submitBtn.addEventListener('click', () => {
         feedback.textContent = `Correct! The first planet is ${correctAnswer}.`;
         feedback.style.color = "green";
         submitBtn.remove()
-        // hide the planet guessing game after correct answer and show square game
-        // document.getElementById('planet-game').style.display = 'none';
         squareGame.style.display = 'block';
     } else {
         feedback.textContent = "Incorrect! Never give up!";
@@ -67,15 +65,17 @@ squares.forEach((square, index) => {
         // if user guessed correctly
         if (index === correctSquare) {
             square.classList.add('correct');
-            result.textContent = "Correct! You gueesed the right square!";
-            square.innerHTML = `<img src="./humster.png" alt="correct!">`;
+            result.textContent = "Hurray! You saved a hamster";
+            square.innerHTML = `<img src="./hamster.png" alt="correct!">`;
             // hide the square game and show the coin toss game
             // squareGame.style.display = 'none';
             coinTossGame.style.display = 'block';
         // if user guessed incorrectly
         } else {
             square.classList.add('incorrect');
-            result.textContent = "Incorrect! Never give up! Try again!"
+            square.innerHTML = `<img src="./hamsterr.png" alt="incorrect!">`;
+            result.textContent = "Oh no! The hamster was eaten!";
+            
             // reset the square game with a new random
             
             setTimeout( () => {
@@ -101,7 +101,6 @@ coinTossBtn.addEventListener('click', () => {
     // generate a random result (heads or tails)
     const coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
 
-    
     const oldH1 = document.querySelector('h1');
     const newH1 = document.createElement('h1');
 
@@ -110,9 +109,6 @@ coinTossBtn.addEventListener('click', () => {
     shareButton.textContent = 'Share the game with your friend';
     shareButton.className = 'share-button';
   
-
-
-
     // check if the user's guess is correct
     if (userGuess === coinResult) {
         coinFeedback.textContent = `Correct! It was ${coinResult}`;
@@ -149,7 +145,11 @@ function validateRegistration(event) {
         return false;
     }
 
-    alert("Form submitted successfully!")
+    window.alert("Form submitted successfully!")
+
+    setTimeout(() => {
+        location.reload()
+      }, 10000);
 };
 
 function playerNameValidation (playerName) {

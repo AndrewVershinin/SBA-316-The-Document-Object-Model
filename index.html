@@ -28,6 +28,10 @@ button {
     margin-left: 10px;
 }
 
+#win-btn {
+    margin: 10px;
+}
+
 #feedback #result #coin-feedback {
     margin-top: 20px;
     font-size: 18px;
@@ -61,7 +65,7 @@ button {
     height: 80px;
 }
 
-.correct img {
+.correct img, .incorrect img {
     display: block;
 }
 
@@ -153,7 +157,7 @@ button {
 
     <!-- planet guessing game -->
      <div id="planet-game">
-        <p id="question">The first planet of our solar system is?</p>
+        <h2><p id="question">The first planet of our solar system is?</p></h2>
         <input type="text" id="user-input" placeholder="Enter your answer">
         <button id="submit-btn">Submit</button>
         <p id="feedback"></p>
@@ -180,7 +184,7 @@ button {
      </div>
 
      <!-- Registration Form -->
-     <form id="registration" style="display: n;">
+     <form id="registration" style="display: none;">
         <h2>The super prize is yours!</h2>
         <div>
             <input id="fullname" name="username" type="text" placeholder="Your full name" />
