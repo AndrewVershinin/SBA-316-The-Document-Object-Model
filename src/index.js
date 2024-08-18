@@ -1,9 +1,3 @@
-// // I'm creating a three-step game. 
-// The first stage is to name the correct answer. 
-// The second stage is to guess the correct option out of three. 
-// The third stage is to flip a coin.
-
-
 // elements for the save hamster game
 // select all squares
 const squares = document.querySelectorAll('.square');
